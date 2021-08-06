@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/base.tres" type="Theme" id=1]
+[ext_resource path="res://Rules.gd" type="Script" id=2]
+[ext_resource path="res://assets/Poppins-Medium.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 21
+outline_color = Color( 0.184314, 0.109804, 0.109804, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Rules" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.564706, 0.839216, 1, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect"]
+anchor_right = 1.0
+margin_top = 30.0
+margin_bottom = 4681.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "HOW TO PLAY"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 365.0
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "
+    • Each player takes turns and throws a couple of dice.
+    • Add the numbers on dice. E.g. the dice show 6 and 5, which makes 11 in total. That means the player can eliminate numbers that add up to 11:
+    6+5(eliminate 6 and 5)
+    2+3+6(eliminate 2,3 and 6)
+    1+2+3+5 (eliminate 1,2,3 and 6)
+et cetera.
+    • A number can be eliminated only once.
+    • A player's turn ends when his/her throw is useless: E.g. the throw gives 1 and 2, a total of 3. This means only possibilities are 1+2 or only 3. Let's say 2 and 3 are eliminated already. That means the player can not make any move, hence the turn ends.
+    • The player who eliminated the most number of packages is the winner."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Back" type="Button" parent="MarginContainer/Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -26.0
+margin_top = -70.0
+margin_right = 26.0
+margin_bottom = -39.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="MarginContainer/Control/Back" to="." method="_on_Back_pressed"]
