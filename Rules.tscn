@@ -35,7 +35,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+[node name="RulesHeader" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 31.0
 theme = ExtResource( 1 )
@@ -44,7 +44,7 @@ text = "HOW TO PLAY"
 align = 1
 valign = 1
 
-[node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+[node name="RulesExpl" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
 margin_top = 56.0
 margin_right = 1024.0
 margin_bottom = 365.0

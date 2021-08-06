@@ -1,19 +1,13 @@
 extends Node
 
+onready var rules_header = get_node("MarginContainer/ColorRect/VBoxContainer/RulesHeader")
+onready var rules_expl = get_node("MarginContainer/ColorRect/VBoxContainer/RulesExpl")
+onready var back = get_node("MarginContainer/Control/Back")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	TextHandler.set_text(rules_header)
+	TextHandler.set_text(rules_expl)
+	TextHandler.set_text(back)
 
 
 func _on_Back_pressed():

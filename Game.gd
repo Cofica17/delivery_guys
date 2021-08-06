@@ -16,7 +16,10 @@ onready var confirm_btn = get_node("MarginContainer/Control/VBoxContainer/VBoxCo
 onready var clear_btn = get_node("MarginContainer/Control/VBoxContainer/VBoxContainer/Clear")
 onready var game = get_node("MarginContainer")
 onready var end = get_node("MarginContainer2")
-onready var end_text = get_node("MarginContainer2/Control/VBoxContainer/Label")
+onready var roll = get_node("MarginContainer/Control2/HBoxContainer/Roll")
+onready var try_again = get_node("MarginContainer2/Control/VBoxContainer/TryAgain")
+onready var back = get_node("MarginContainer/Control3/Back")
+onready var end_text = get_node("MarginContainer2/Control/VBoxContainer/GameOverText")
 
 var tempElapsed = 0
 var diced = false
@@ -46,12 +49,17 @@ func _ready():
 	btn7.connect("pressed", self, "_on_btn_pressed", [7, btn7])
 	btn8.connect("pressed", self, "_on_btn_pressed", [8, btn8])
 	btn9.connect("pressed", self, "_on_btn_pressed", [9, btn9])
+	TextHandler.set_text(confirm_btn)
+	TextHandler.set_text(clear_btn)
+	TextHandler.set_text(roll)
+	TextHandler.set_text(try_again)
+	TextHandler.set_text(back)
 
 
 func _on_btn_pressed(value:int, btn:Button) -> void:
 	if not rolled:
 		error.show()
-		error.text = "You need to roll the dices first!"
+		TextHandler.set_text(error, "RollDicesFirst")
 		return
 	
 	total += value
@@ -65,21 +73,22 @@ func _on_Confirm_pressed():
 	
 	if total == dice_total:
 		error.show()
-		packages_total += btns_to_disable.size()
-		error.text = "You eliminated %d packages in total, next roll!" % [packages_total]
+		packages_total += total
+		TextHandler.set_text(error, "PackagesDelivered", [packages_total])
 		btns_to_disable.clear()
 		confirm_btn.disabled = true
 		clear_btn.disabled = true
 		rolled = false
+		roll.disabled = false
 		for num in not_eliminated_numbers_temp:
 			not_eliminated_numbers.erase(num)
 		
 	elif total < dice_total:
 		error.show()
-		error.text = "Sum selected is too low!"
+		TextHandler.set_text(error, "SumToLow")
 	elif total > dice_total:
 		error.show()
-		error.text = "Sum selected is too high!"
+		TextHandler.set_text(error, "SumToHigh")
 
 
 func _on_Clear_pressed():
@@ -117,7 +126,7 @@ func handleDice():
 		yield(get_tree().create_timer(1.0), "timeout")
 		#game.hide()
 		end.show()
-		end_text.text += str(packages_total)
+		TextHandler.set_text(end_text, null, [packages_total])
 
 
 func can_eliminate_numbers() -> bool:
@@ -181,6 +190,7 @@ func dice():
 func _on_Roll_pressed():
 	dice()
 	error.hide()
+	roll.disabled = true
 	total = 0
 	confirm_btn.disabled = false
 	clear_btn.disabled = false

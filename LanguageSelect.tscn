@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/base.tres" type="Theme" id=1]
+[ext_resource path="res://LanguageSelect.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.564706, 0.839216, 1, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="English" type="Button" parent="MarginContainer/ColorRect/HBoxContainer"]
+margin_left = 441.0
+margin_right = 509.0
+margin_bottom = 31.0
+text = "English"
+
+[node name="Turkish" type="Button" parent="MarginContainer/ColorRect/HBoxContainer"]
+margin_left = 513.0
+margin_right = 583.0
+margin_bottom = 31.0
+text = "Turkish"
+
+[connection signal="pressed" from="MarginContainer/ColorRect/HBoxContainer/English" to="." method="_on_English_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/HBoxContainer/Turkish" to="." method="_on_Turkish_pressed"]

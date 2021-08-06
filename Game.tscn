@@ -242,13 +242,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="MarginContainer2/Control/VBoxContainer"]
+[node name="GameOverText" type="Label" parent="MarginContainer2/Control/VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 75.0
 theme = ExtResource( 3 )
 text = "You cannot eliminate anymore numbers, the game is over
 
-Packages eliminated: "
+Packages delivered: "
 align = 1
 valign = 1
 __meta__ = {

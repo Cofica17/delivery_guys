@@ -35,7 +35,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+[node name="StartHeader" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 31.0
 theme = ExtResource( 1 )
@@ -44,7 +44,7 @@ text = "Delivery Guys"
 align = 1
 valign = 1
 
-[node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+[node name="StartExpl" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
 margin_top = 56.0
 margin_right = 1024.0
 margin_bottom = 469.0
@@ -82,17 +82,30 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -52.0
+margin_left = -126.5
 margin_top = -80.0
-margin_right = 52.0
+margin_right = 126.5
 margin_bottom = -40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Rules" type="Button" parent="MarginContainer/Control/HBoxContainer"]
+[node name="LanguageSelect" type="Button" parent="MarginContainer/Control/HBoxContainer"]
 margin_top = 4.0
-margin_right = 55.0
+margin_right = 145.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 1 )
+text = "Select language"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rules" type="Button" parent="MarginContainer/Control/HBoxContainer"]
+margin_left = 149.0
+margin_top = 4.0
+margin_right = 204.0
 margin_bottom = 35.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -103,9 +116,9 @@ __meta__ = {
 }
 
 [node name="Play" type="Button" parent="MarginContainer/Control/HBoxContainer"]
-margin_left = 59.0
+margin_left = 208.0
 margin_top = 4.0
-margin_right = 104.0
+margin_right = 253.0
 margin_bottom = 35.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -115,5 +128,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="MarginContainer/Control/HBoxContainer/LanguageSelect" to="." method="_on_LanguageSelect_pressed"]
 [connection signal="pressed" from="MarginContainer/Control/HBoxContainer/Rules" to="." method="_on_Rules_pressed"]
 [connection signal="pressed" from="MarginContainer/Control/HBoxContainer/Play" to="." method="_on_Play_pressed"]

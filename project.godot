@@ -8,11 +8,31 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "EnglishTranslation",
+"language": "GDScript",
+"path": "res://EnglishTranslation.gd"
+}, {
+"base": "Node",
+"class": "TurkishTranslation",
+"language": "GDScript",
+"path": "res://TurkishTranslation.gd"
+} ]
+_global_script_class_icons={
+"EnglishTranslation": "",
+"TurkishTranslation": ""
+}
+
 [application]
 
 config/name="Delivery Guys"
-run/main_scene="res://start.tscn"
+run/main_scene="res://LanguageSelect.tscn"
 config/icon="res://assets/icon.png"
+
+[autoload]
+
+TextHandler="*res://TextHandler.gd"
 
 [display]
 
