@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/base.tres" type="Theme" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.564706, 0.839216, 1, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -48.5
+margin_right = 74.0
+margin_bottom = 48.5
+custom_constants/separation = 35
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectGame" type="Button" parent="MarginContainer/ColorRect/VBoxContainer"]
+margin_right = 148.0
+margin_bottom = 31.0
+text = "Game select"
+
+[node name="SelectLanguage" type="Button" parent="MarginContainer/ColorRect/VBoxContainer"]
+margin_top = 66.0
+margin_right = 148.0
+margin_bottom = 97.0
+text = "Select Language"
+
+[connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/SelectGame" to="." method="_on_ChooseGame_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/VBoxContainer/SelectLanguage" to="." method="_on_SelectLanguage_pressed"]

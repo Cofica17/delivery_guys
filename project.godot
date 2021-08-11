@@ -10,29 +10,54 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "EnglishTranslation",
+"class": "DGEnglishTranslation",
 "language": "GDScript",
-"path": "res://EnglishTranslation.gd"
+"path": "res://DeliveryGuys/DGEnglishTranslation.gd"
 }, {
 "base": "Node",
-"class": "TurkishTranslation",
+"class": "DGTurkishTranslation",
 "language": "GDScript",
-"path": "res://TurkishTranslation.gd"
+"path": "res://DeliveryGuys/DGTurkishTranslation.gd"
+}, {
+"base": "Node",
+"class": "MainEnglishTranslation",
+"language": "GDScript",
+"path": "res://Language/MainEnglishTranslation.gd"
+}, {
+"base": "Node",
+"class": "MainTurkishTranslation",
+"language": "GDScript",
+"path": "res://Language/MainTurkishTranslation.gd"
+}, {
+"base": "Node",
+"class": "SIEng",
+"language": "GDScript",
+"path": "res://SpaceInvasion/Lan/SIEng.gd"
+}, {
+"base": "Node",
+"class": "SITur",
+"language": "GDScript",
+"path": "res://SpaceInvasion/Lan/SITur.gd"
 } ]
 _global_script_class_icons={
-"EnglishTranslation": "",
-"TurkishTranslation": ""
+"DGEnglishTranslation": "",
+"DGTurkishTranslation": "",
+"MainEnglishTranslation": "",
+"MainTurkishTranslation": "",
+"SIEng": "",
+"SITur": ""
 }
 
 [application]
 
-config/name="Delivery Guys"
-run/main_scene="res://LanguageSelect.tscn"
+config/name="Math games"
+run/main_scene="res://Main.tscn"
 config/icon="res://assets/icon.png"
 
 [autoload]
 
 TextHandler="*res://TextHandler.gd"
+Global="*res://Global.gd"
 
 [display]
 

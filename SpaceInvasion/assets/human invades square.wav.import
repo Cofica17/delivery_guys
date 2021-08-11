@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/human invades square.wav-495bc3daf674d0f4055a8e8d88cba3f3.sample"
+
+[deps]
+
+source_file="res://SpaceInvasion/assets/human invades square.wav"
+dest_files=[ "res://.import/human invades square.wav-495bc3daf674d0f4055a8e8d88cba3f3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
