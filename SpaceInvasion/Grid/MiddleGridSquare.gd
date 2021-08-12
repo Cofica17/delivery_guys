@@ -7,6 +7,12 @@ export var hide_right := false setget set_hide_right
 export var hide_down := false setget set_hide_down
 
 
+func show_texture(turn):
+	if turn == 1:
+		$Texture.texture = load("res://SpaceInvasion/assets/Alien.jpg")
+	
+	$Texture.visible = true
+
 func set_hide_left(flag) -> void:
 	$Left.visible = !flag
 	hide_left = flag

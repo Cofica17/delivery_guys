@@ -1,8 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SpaceInvasion/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/base.tres" type="Theme" id=2]
 [ext_resource path="res://SpaceInvasion/Grid/GridSquare.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Poppins-Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://SpaceInvasion/assets/alien invades square.wav" type="AudioStream" id=5]
+[ext_resource path="res://SpaceInvasion/assets/human invades square.wav" type="AudioStream" id=6]
+[ext_resource path="res://SpaceInvasion/assets/victory (human wins).wav" type="AudioStream" id=7]
+[ext_resource path="res://SpaceInvasion/assets/defeat (alien wins).wav" type="AudioStream" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 4 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,18 +39,78 @@ margin_bottom = 600.0
 color = Color( 0.564706, 0.839216, 1, 1 )
 
 [node name="Score" type="Control" parent="MarginContainer/ColorRect"]
-margin_left = 150.0
-margin_right = 190.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/Score"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -160.5
+margin_top = 20.0
+margin_right = 160.5
+margin_bottom = 66.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HumanScore" type="Label" parent="MarginContainer/ColorRect/Score/HBoxContainer"]
+margin_right = 154.0
+margin_bottom = 46.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Human: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AlienScore" type="Label" parent="MarginContainer/ColorRect/Score/HBoxContainer"]
+margin_left = 204.0
+margin_right = 321.0
+margin_bottom = 46.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Alien: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentTurn" type="Label" parent="MarginContainer/ColorRect/Score"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -55.0
+margin_bottom = -23.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P" type="Label" parent="MarginContainer/ColorRect/Score"]
+anchor_right = 1.0
+margin_top = 100.0
+margin_bottom = 123.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Grid" type="Control" parent="MarginContainer/ColorRect"]
-margin_left = 350.0
+margin_left = 345.0
 margin_top = 170.0
-margin_right = 390.0
+margin_right = 385.0
 margin_bottom = 210.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,6 +118,7 @@ __meta__ = {
 [node name="GridUp" type="Control" parent="MarginContainer/ColorRect/Grid"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -50,12 +128,14 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 
 [node name="Square2" parent="MarginContainer/ColorRect/Grid/GridUp" instance=ExtResource( 3 )]
 margin_left = 110.0
 margin_top = 0.0
 margin_right = 150.0
 margin_bottom = 40.0
+mouse_filter = 2
 hide_left = true
 hide_right = true
 
@@ -64,11 +144,13 @@ margin_left = 220.0
 margin_top = 0.0
 margin_right = 260.0
 margin_bottom = 40.0
+mouse_filter = 2
 
 [node name="GridMiddle" type="Control" parent="MarginContainer/ColorRect/Grid"]
-margin_top = 120.0
+margin_top = 110.0
 margin_right = 40.0
-margin_bottom = 160.0
+margin_bottom = 150.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -78,6 +160,7 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 hide_up = true
 hide_down = true
 
@@ -86,6 +169,8 @@ margin_left = 110.0
 margin_top = 0.0
 margin_right = 150.0
 margin_bottom = 40.0
+mouse_filter = 2
+hide_left = true
 hide_up = true
 hide_down = true
 
@@ -94,13 +179,16 @@ margin_left = 220.0
 margin_top = 0.0
 margin_right = 260.0
 margin_bottom = 40.0
+mouse_filter = 2
+hide_left = true
 hide_up = true
 hide_down = true
 
 [node name="GridDown" type="Control" parent="MarginContainer/ColorRect/Grid"]
-margin_top = 240.0
+margin_top = 210.0
 margin_right = 40.0
-margin_bottom = 280.0
+margin_bottom = 250.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -110,12 +198,14 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 
 [node name="Square2" parent="MarginContainer/ColorRect/Grid/GridDown" instance=ExtResource( 3 )]
 margin_left = 110.0
 margin_top = 0.0
 margin_right = 150.0
 margin_bottom = 40.0
+mouse_filter = 2
 hide_left = true
 hide_right = true
 
@@ -124,6 +214,7 @@ margin_left = 220.0
 margin_top = 0.0
 margin_right = 260.0
 margin_bottom = 40.0
+mouse_filter = 2
 
 [node name="Control3" type="Control" parent="MarginContainer"]
 margin_right = 1024.0
@@ -168,4 +259,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AlienInvadeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="HumanInvadeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="AlienDefeatSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="HumanDefeatSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+
 [connection signal="pressed" from="MarginContainer/Control3/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="MarginContainer/Control3/HBoxContainer/TryAgain" to="." method="_on_TryAgain_pressed"]
