@@ -16,8 +16,8 @@ Her iki tür için de tek amaç rakibinden olabildiğince çok gezegeni istila e
 	• Bir karenin son kenarını eleyen oyuncu, o kareyi ve dolayısıyla o gezegeni istila etmiş olur.
 	• Amaç; rakibinizden daha fazla kareyi istila etmektir.""",
 	"Back" : "Geri",
-	"HumanScore" : "İnsan: %d",
-	"AlienScore" : "Yabancı: %d",
+	"HumanScore" : "İnsanlar: %d",
+	"AlienScore" : "Uzaylılar: %d",
 	"CurrentTurnHuman" : "Şimdiki sıra: insan",
 	"CurrentTurnAlien" : "Şimdiki sıra: uzaylı",
 	"P1" : "Tüm suç kötü havada.",

@@ -247,4 +247,4 @@ func _on_TryAgain_pressed():
 
 
 func _on_Back_pressed():
-	get_tree().change_scene("res://DeliveryGuys/start.tscn")
+	get_tree().change_scene("res://common/Start.tscn")

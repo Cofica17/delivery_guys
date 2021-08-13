@@ -15,14 +15,22 @@ var s9 := []
 var human_score:int = 0
 var alien_score :int = 0
 
-onready var h_score = $MarginContainer/ColorRect/Score/HBoxContainer/HumanScore
-onready var a_score = $MarginContainer/ColorRect/Score/HBoxContainer/AlienScore
+onready var h_score = $MarginContainer/ColorRect/Score/VBoxContainer2/HumansPoints/HumanScore
+onready var a_score = $MarginContainer/ColorRect/Score/VBoxContainer/AliensScore/AlienScore
 onready var current_turn = $MarginContainer/ColorRect/Score/CurrentTurn
 onready var p = $MarginContainer/ColorRect/Score/P
 onready var alien_invade_sound = $AlienInvadeSound
 onready var human_invade_sound = $HumanInvadeSound
 onready var human_defeat = $HumanDefeatSound
 onready var alien_defeat = $AlienDefeatSound
+
+onready var h_points = $MarginContainer/ColorRect/Score/VBoxContainer2/HumansPoints
+onready var h_points2 = $MarginContainer/ColorRect/Score/VBoxContainer2/HumansPoints2
+
+onready var a_points = $MarginContainer/ColorRect/Score/VBoxContainer/AliensScore
+onready var a_points2 = $MarginContainer/ColorRect/Score/VBoxContainer/AliensScore2
+
+var point = preload("res://SpaceInvasion/Point.tscn")
 
 enum Turn {Human, Alien}
 
@@ -34,8 +42,8 @@ func _ready():
 	_connect_sides_to_signal()
 	turn = Turn.Human
 	TextHandler.set_text(current_turn, "CurrentTurnHuman")
-	TextHandler.set_text(h_score, null, [human_score])
-	TextHandler.set_text(a_score, null, [alien_score])
+	TextHandler.set_text(h_score)
+	TextHandler.set_text(a_score)
 	TextHandler.set_text($MarginContainer/Control3/HBoxContainer/Back)
 	TextHandler.set_text($MarginContainer/Control3/HBoxContainer/TryAgain)
 
@@ -51,6 +59,7 @@ func end_turn() -> void:
 
 func _on_side_pressed(side) -> void:
 	side.visible = false
+	side.show_dotted_line()
 	var score = _check_if_square_conqured()
 	
 	if turn == Turn.Human:
@@ -59,15 +68,23 @@ func _on_side_pressed(side) -> void:
 		alien_invade_sound.play()
 	
 	if not score == 0:
-		
+		var p = point.instance()
 		if turn == Turn.Human:
 			human_score += score
+			if human_score <= 4:
+				h_points.add_child(p)
+			else:
+				h_points2.add_child(p)
 		else:
 			alien_score += score
+			if alien_score <= 4:
+				a_points.add_child(p)
+			else:
+				a_points2.add_child(p)
 			alien_invade_sound.play()
 		
-		TextHandler.set_text(h_score, null, [human_score])
-		TextHandler.set_text(a_score, null, [alien_score])
+		TextHandler.set_text(h_score)
+		TextHandler.set_text(a_score)
 		
 		_is_end_game()
 	

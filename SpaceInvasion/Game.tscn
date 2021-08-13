@@ -46,38 +46,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/Score"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -160.5
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/ColorRect/Score"]
+margin_left = 20.0
 margin_top = 20.0
-margin_right = 160.5
+margin_right = 171.0
 margin_bottom = 66.0
-custom_constants/separation = 50
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HumanScore" type="Label" parent="MarginContainer/ColorRect/Score/HBoxContainer"]
-margin_right = 154.0
+[node name="HumansPoints" type="HBoxContainer" parent="MarginContainer/ColorRect/Score/VBoxContainer2"]
+margin_right = 151.0
 margin_bottom = 46.0
-theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 1 )
-text = "Human: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AlienScore" type="Label" parent="MarginContainer/ColorRect/Score/HBoxContainer"]
-margin_left = 204.0
-margin_right = 321.0
+[node name="HumanScore" type="Label" parent="MarginContainer/ColorRect/Score/VBoxContainer2/HumansPoints"]
+margin_right = 151.0
 margin_bottom = 46.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
-text = "Alien: 0"
+text = "Humans: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HumansPoints2" type="HBoxContainer" parent="MarginContainer/ColorRect/Score/VBoxContainer2"]
+margin_top = 50.0
+margin_right = 151.0
+margin_bottom = 50.0
 
 [node name="CurrentTurn" type="Label" parent="MarginContainer/ColorRect/Score"]
 anchor_top = 1.0
@@ -104,6 +102,38 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/Score"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -270.0
+margin_top = 20.0
+margin_bottom = 66.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AliensScore" type="HBoxContainer" parent="MarginContainer/ColorRect/Score/VBoxContainer"]
+margin_right = 270.0
+margin_bottom = 46.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AlienScore" type="Label" parent="MarginContainer/ColorRect/Score/VBoxContainer/AliensScore"]
+margin_right = 114.0
+margin_bottom = 46.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Aliens: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AliensScore2" type="HBoxContainer" parent="MarginContainer/ColorRect/Score/VBoxContainer"]
+margin_top = 50.0
+margin_right = 270.0
+margin_bottom = 50.0
 
 [node name="Grid" type="Control" parent="MarginContainer/ColorRect"]
 margin_left = 345.0
@@ -147,9 +177,9 @@ margin_bottom = 40.0
 mouse_filter = 2
 
 [node name="GridMiddle" type="Control" parent="MarginContainer/ColorRect/Grid"]
-margin_top = 110.0
+margin_top = 105.0
 margin_right = 40.0
-margin_bottom = 150.0
+margin_bottom = 145.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
