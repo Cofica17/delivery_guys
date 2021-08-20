@@ -1,0 +1,286 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://CrossingBridge/Game.gd" type="Script" id=1]
+[ext_resource path="res://assets/base.tres" type="Theme" id=2]
+[ext_resource path="res://CrossingBridge/Assets/köprü3.jpg" type="Texture" id=3]
+[ext_resource path="res://CrossingBridge/Assets/guitheki.png" type="Texture" id=4]
+[ext_resource path="res://CrossingBridge/Assets/marthagu.png" type="Texture" id=5]
+[ext_resource path="res://CrossingBridge/Assets/marygui.png" type="Texture" id=6]
+[ext_resource path="res://CrossingBridge/Assets/lilredgu.png" type="Texture" id=7]
+[ext_resource path="res://CrossingBridge/Assets/lamp.jpg" type="Texture" id=8]
+[ext_resource path="res://CrossingBridge/Char.gd" type="Script" id=9]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.564706, 0.839216, 1, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asli" type="Control" parent="MarginContainer/ColorRect"]
+margin_left = 13.0
+margin_top = 393.0
+margin_right = 53.0
+margin_bottom = 433.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Asli"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/Asli"]
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 3.0
+text = "Ali - 1"
+align = 1
+valign = 1
+
+[node name="Ali" type="Control" parent="MarginContainer/ColorRect"]
+margin_left = 35.0
+margin_top = 458.0
+margin_right = 75.0
+margin_bottom = 498.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Ali"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/Ali"]
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 3.0
+text = "Asli - 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Necdet" type="Control" parent="MarginContainer/ColorRect"]
+margin_left = 66.0
+margin_top = 524.0
+margin_right = 106.0
+margin_bottom = 564.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Necdet"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/Necdet"]
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 3.0
+text = "Necdet - 6"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selin" type="Control" parent="MarginContainer/ColorRect"]
+margin_left = 159.0
+margin_top = 541.0
+margin_right = 199.0
+margin_bottom = 581.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Selin"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/Selin"]
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 3.0
+text = "Selin - 10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lamp" type="Control" parent="MarginContainer/ColorRect"]
+margin_left = 100.0
+margin_top = 435.0
+margin_right = 150.0
+margin_bottom = 485.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Lamp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="Control3" type="Control" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control3"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -40.0
+margin_right = 154.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="MarginContainer/Control3/HBoxContainer"]
+margin_top = 4.0
+margin_right = 52.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgain" type="Button" parent="MarginContainer/Control3/HBoxContainer"]
+visible = false
+margin_left = 56.0
+margin_top = 4.0
+margin_right = 144.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "Try again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Control3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -121.0
+margin_top = -40.0
+margin_right = 121.0
+margin_bottom = -9.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClearSelection" type="Button" parent="MarginContainer/Control3/HBoxContainer2"]
+margin_right = 135.0
+margin_bottom = 31.0
+text = "Clear selection"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoBtn" type="Button" parent="MarginContainer/Control3/HBoxContainer2"]
+margin_left = 139.0
+margin_right = 242.0
+margin_bottom = 31.0
+text = "GO GO GO!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AsliBeginPos" type="Position2D" parent="."]
+position = Vector2( 13.773, 393.061 )
+
+[node name="AsliEndPos" type="Position2D" parent="."]
+position = Vector2( 785.062, 16.9514 )
+
+[node name="AliBeginPos" type="Position2D" parent="."]
+position = Vector2( 34.9623, 457.688 )
+
+[node name="AliEndPos" type="Position2D" parent="."]
+position = Vector2( 850.749, 18.0108 )
+
+[node name="NectdetBeginPos" type="Position2D" parent="."]
+position = Vector2( 66.7462, 524.434 )
+
+[node name="NectdetEndPos" type="Position2D" parent="."]
+position = Vector2( 924.912, 34.9624 )
+
+[node name="SelinBeginPos" type="Position2D" parent="."]
+position = Vector2( 159.979, 541.386 )
+
+[node name="SelinEndPos" type="Position2D" parent="."]
+position = Vector2( 947.16, 110.184 )
+
+[node name="LampBeginPos" type="Position2D" parent="."]
+position = Vector2( 100.937, 435.723 )
+
+[node name="LampEndPos" type="Position2D" parent="."]
+position = Vector2( 811.836, 85 )
+
+[connection signal="gui_input" from="MarginContainer/ColorRect/Asli" to="." method="_on_Asli_gui_input"]
+[connection signal="gui_input" from="MarginContainer/ColorRect/Ali" to="." method="_on_Ali_gui_input"]
+[connection signal="gui_input" from="MarginContainer/ColorRect/Necdet" to="." method="_on_Necdet_gui_input"]
+[connection signal="gui_input" from="MarginContainer/ColorRect/Selin" to="." method="_on_Selin_gui_input"]
+[connection signal="pressed" from="MarginContainer/Control3/HBoxContainer2/ClearSelection" to="." method="_on_ClearSelection_pressed"]
+[connection signal="pressed" from="MarginContainer/Control3/HBoxContainer2/GoBtn" to="." method="_on_GoBtn_pressed"]

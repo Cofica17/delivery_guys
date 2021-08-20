@@ -25,3 +25,7 @@ func _on_AlienInvasion_pressed():
 
 func _on_Back_pressed():
 	get_tree().change_scene("res://Main.tscn")
+
+
+func _on_CrossingBridge_pressed():
+	get_tree().change_scene("res://CrossingBridge/Start.tscn")

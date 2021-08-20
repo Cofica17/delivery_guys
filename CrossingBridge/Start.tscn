@@ -1,0 +1,141 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Poppins-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/base.tres" type="Theme" id=2]
+[ext_resource path="res://CrossingBridge/Start.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 21
+outline_color = Color( 0.184314, 0.109804, 0.109804, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Start" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.564706, 0.839216, 1, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect"]
+anchor_right = 1.0
+margin_top = 30.0
+margin_bottom = 4681.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartHeader" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 31.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Crossing the bridge"
+align = 1
+valign = 1
+
+[node name="StartExpl" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 521.0
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Togan is located next to one of the most beautiful and mighty rivers of Mesopotamia. One day, Ali and three of his friends decided to use the only bridge this little village has and go camping across the river.
+The bridge of Togan became a wreck after years of neglect. It had such a bad condition that its strength could only allow two people to walk at the same time.
+As the night fall onto the four friends, the weather got worse and a storm broke out all of a sudden. The four friends quickly decided to pack and go back to the village. Though when they reached the bridge, only one of their lamps survived the heavy storm. Since it was too dark they needed a light to cross the bridge which added another problem to the bridge’s existing condition.
+Also, these four friends were crossing the bridge with different speeds:
+Aslı: 1 minute
+Ali: 2 minutes
+Necdet: 6 minutes
+Selin: 10 minutes
+Your goal is to find the quickest way to cross the bridge.
+
+Though this battle is not about strength, nor is it about speed. It is a real strategic test for humans and aliens.
+
+Your goal is to invade as many planets as you can and have superiority in the UIX-174 system."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -223.5
+margin_top = -436.0
+margin_right = 223.5
+rect_min_size = Vector2( 447, 436 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -50.0
+margin_right = 80.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="MarginContainer/Control/HBoxContainer"]
+margin_top = 4.0
+margin_right = 52.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rules" type="Button" parent="MarginContainer/Control/HBoxContainer"]
+margin_left = 56.0
+margin_top = 4.0
+margin_right = 111.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "Rules"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="MarginContainer/Control/HBoxContainer"]
+margin_left = 115.0
+margin_top = 4.0
+margin_right = 160.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}

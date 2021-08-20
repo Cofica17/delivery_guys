@@ -42,8 +42,8 @@ func _ready():
 	_connect_sides_to_signal()
 	turn = Turn.Human
 	TextHandler.set_text(current_turn, "CurrentTurnHuman")
-	TextHandler.set_text(h_score)
-	TextHandler.set_text(a_score)
+	TextHandler.set_text(h_score, null, [human_score])
+	TextHandler.set_text(a_score, null, [alien_score])
 	TextHandler.set_text($MarginContainer/Control3/HBoxContainer/Back)
 	TextHandler.set_text($MarginContainer/Control3/HBoxContainer/TryAgain)
 
@@ -68,23 +68,15 @@ func _on_side_pressed(side) -> void:
 		alien_invade_sound.play()
 	
 	if not score == 0:
-		var p = point.instance()
 		if turn == Turn.Human:
 			human_score += score
-			if human_score <= 4:
-				h_points.add_child(p)
-			else:
-				h_points2.add_child(p)
+			human_invade_sound.play()
 		else:
 			alien_score += score
-			if alien_score <= 4:
-				a_points.add_child(p)
-			else:
-				a_points2.add_child(p)
 			alien_invade_sound.play()
 		
-		TextHandler.set_text(h_score)
-		TextHandler.set_text(a_score)
+		TextHandler.set_text(h_score, null, [human_score])
+		TextHandler.set_text(a_score, null, [alien_score])
 		
 		_is_end_game()
 	
