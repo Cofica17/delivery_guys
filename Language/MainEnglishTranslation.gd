@@ -6,5 +6,6 @@ const en := {
 	"DeliveryGuys" : "Delivery Guys",
 	"AlienInvasion" : "Space Invasion",
 	"SelectGame": "Game Select",
-	"Back" : "Back"
+	"Back" : "Back",
+	"CrossingBridge":"Crossing The Bridge"
 }

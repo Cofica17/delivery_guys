@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "BCEng",
+"language": "GDScript",
+"path": "res://CrossingBridge/Lan/BCEng.gd"
+}, {
+"base": "Node",
+"class": "BCTur",
+"language": "GDScript",
+"path": "res://CrossingBridge/Lan/BCTur.gd"
+}, {
+"base": "Node",
 "class": "DGEnglishTranslation",
 "language": "GDScript",
 "path": "res://DeliveryGuys/DGEnglishTranslation.gd"
@@ -40,6 +50,8 @@ _global_script_classes=[ {
 "path": "res://SpaceInvasion/Lan/SITur.gd"
 } ]
 _global_script_class_icons={
+"BCEng": "",
+"BCTur": "",
 "DGEnglishTranslation": "",
 "DGTurkishTranslation": "",
 "MainEnglishTranslation": "",

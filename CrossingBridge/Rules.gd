@@ -6,9 +6,9 @@ onready var back = get_node("MarginContainer/Control/Back")
 
 
 func _ready():
-#	TextHandler.set_text(rules_header)
-#	TextHandler.set_text(rules_expl)
-#	TextHandler.set_text(back)
+	TextHandler.set_text(rules_header)
+	TextHandler.set_text(rules_expl)
+	TextHandler.set_text(back)
 	$MarginContainer/Control/Back.connect("pressed", self, "_on_back_pressed")
 
 

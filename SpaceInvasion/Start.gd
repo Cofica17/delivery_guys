@@ -1,6 +1,5 @@
 extends Node
 
-
 onready var start_header = get_node("MarginContainer/ColorRect/VBoxContainer/StartHeader")
 onready var start_expl = get_node("MarginContainer/ColorRect/VBoxContainer/StartExpl")
 onready var rules = get_node("MarginContainer/Control/HBoxContainer/Rules")

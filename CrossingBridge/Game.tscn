@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://CrossingBridge/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/base.tres" type="Theme" id=2]
@@ -9,6 +9,14 @@
 [ext_resource path="res://CrossingBridge/Assets/lilredgu.png" type="Texture" id=7]
 [ext_resource path="res://CrossingBridge/Assets/lamp.jpg" type="Texture" id=8]
 [ext_resource path="res://CrossingBridge/Char.gd" type="Script" id=9]
+[ext_resource path="res://assets/Poppins-Medium.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://CrossingBridge/Assets/Usain Bolt.jpg" type="Texture" id=11]
+[ext_resource path="res://CrossingBridge/Assets/Cover image.jpg" type="Texture" id=12]
+[ext_resource path="res://CrossingBridge/Assets/Dustin.jpg" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 10 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -62,7 +70,7 @@ __meta__ = {
 margin_top = -20.0
 margin_right = 40.0
 margin_bottom = 3.0
-text = "Ali - 1"
+text = "Asli - 1"
 align = 1
 valign = 1
 
@@ -90,7 +98,7 @@ __meta__ = {
 margin_top = -20.0
 margin_right = 40.0
 margin_bottom = 3.0
-text = "Asli - 2"
+text = "Ali - 2"
 align = 1
 valign = 1
 __meta__ = {
@@ -175,6 +183,95 @@ texture = ExtResource( 8 )
 expand = true
 stretch_mode = 6
 
+[node name="Score" type="Label" parent="MarginContainer/ColorRect"]
+margin_left = 40.0
+margin_top = 30.0
+margin_right = 95.0
+margin_bottom = 53.0
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndGame" type="ColorRect" parent="MarginContainer"]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.564706, 0.839216, 1, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/EndGame"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 50.0
+margin_right = 200.0
+margin_bottom = 350.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndScore" type="Label" parent="MarginContainer/EndGame/VBoxContainer"]
+margin_left = 123.0
+margin_right = 277.0
+margin_bottom = 35.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 1 )
+text = "End Score: 18"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P" type="Label" parent="MarginContainer/EndGame/VBoxContainer"]
+margin_left = 117.0
+margin_top = 39.0
+margin_right = 282.0
+margin_bottom = 74.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 1 )
+text = "“USAIN BOLT!”"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dustin" type="TextureRect" parent="MarginContainer/EndGame"]
+visible = false
+margin_left = 335.0
+margin_top = 147.0
+margin_right = 683.0
+margin_bottom = 536.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bridge" type="TextureRect" parent="MarginContainer/EndGame"]
+visible = false
+margin_left = 22.0
+margin_top = 101.0
+margin_right = 1007.0
+margin_bottom = 569.0
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Usain" type="TextureRect" parent="MarginContainer/EndGame"]
+visible = false
+margin_left = 182.0
+margin_top = 130.0
+margin_right = 873.0
+margin_bottom = 536.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Control3" type="Control" parent="MarginContainer"]
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -249,25 +346,25 @@ __meta__ = {
 }
 
 [node name="AsliBeginPos" type="Position2D" parent="."]
-position = Vector2( 13.773, 393.061 )
+position = Vector2( 13, 393 )
 
 [node name="AsliEndPos" type="Position2D" parent="."]
 position = Vector2( 785.062, 16.9514 )
 
 [node name="AliBeginPos" type="Position2D" parent="."]
-position = Vector2( 34.9623, 457.688 )
+position = Vector2( 35, 458 )
 
 [node name="AliEndPos" type="Position2D" parent="."]
 position = Vector2( 850.749, 18.0108 )
 
 [node name="NectdetBeginPos" type="Position2D" parent="."]
-position = Vector2( 66.7462, 524.434 )
+position = Vector2( 66, 524 )
 
 [node name="NectdetEndPos" type="Position2D" parent="."]
 position = Vector2( 924.912, 34.9624 )
 
 [node name="SelinBeginPos" type="Position2D" parent="."]
-position = Vector2( 159.979, 541.386 )
+position = Vector2( 159, 541 )
 
 [node name="SelinEndPos" type="Position2D" parent="."]
 position = Vector2( 947.16, 110.184 )

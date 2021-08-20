@@ -6,6 +6,7 @@ func _ready():
 	TextHandler.tur = MainTurkishTranslation.tur
 	TextHandler.set_text($MarginContainer/ColorRect/VBoxContainer/DeliveryGuys)
 	TextHandler.set_text($MarginContainer/ColorRect/VBoxContainer/AlienInvasion)
+	TextHandler.set_text($MarginContainer/ColorRect/VBoxContainer/CrossingBridge)
 	TextHandler.set_text($Control3/HBoxContainer/Back)
 
 
@@ -28,4 +29,6 @@ func _on_Back_pressed():
 
 
 func _on_CrossingBridge_pressed():
+	TextHandler.en = BCEng.en
+	TextHandler.tur = BCTur.tur
 	get_tree().change_scene("res://CrossingBridge/Start.tscn")

@@ -6,5 +6,6 @@ const tur := {
 	"DeliveryGuys" : "Kargocular",
 	"SelectGame" : "Oyun Seçimi",
 	"Back" : "Geri",
-	"AlienInvasion":"Uzay İstilası"
+	"AlienInvasion":"Uzay İstilası",
+	"CrossingBridge": "Köprüyü Geçmek"
 }
