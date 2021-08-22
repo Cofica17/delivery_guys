@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Poppins-Medium.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/base.tres" type="Theme" id=2]
 [ext_resource path="res://CrossingBridge/Start.gd" type="Script" id=3]
+[ext_resource path="res://CrossingBridge/Assets/Cover image.jpg" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 21
@@ -31,7 +32,7 @@ color = Color( 0.564706, 0.839216, 1, 1 )
 anchor_right = 1.0
 margin_top = 30.0
 margin_bottom = 4681.0
-custom_constants/separation = 25
+custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,27 +47,36 @@ align = 1
 valign = 1
 
 [node name="StartExpl" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
-margin_top = 56.0
+margin_top = 41.0
 margin_right = 1024.0
-margin_bottom = 521.0
+margin_bottom = 428.0
 size_flags_vertical = 1
 theme = ExtResource( 2 )
-text = "Togan is located next to one of the most beautiful and mighty rivers of Mesopotamia. One day, Ali and three of his friends decided to use the only bridge this little village has and go camping across the river.
-The bridge of Togan became a wreck after years of neglect. It had such a bad condition that its strength could only allow two people to walk at the same time.
+text = "Togan is located next to one of the most beautiful and mighty rivers of Mesopotamia. One day, Ali and three of his friends decided to use the only bridge this little village has and go camping across the river. The bridge of Togan became a wreck after years of neglect. It had such a bad condition that its strength could only allow two people to walk at the same time.
+
 As the night fall onto the four friends, the weather got worse and a storm broke out all of a sudden. The four friends quickly decided to pack and go back to the village. Though when they reached the bridge, only one of their lamps survived the heavy storm. Since it was too dark they needed a light to cross the bridge which added another problem to the bridge’s existing condition.
+
 Also, these four friends were crossing the bridge with different speeds:
 Aslı: 1 minute
 Ali: 2 minutes
 Necdet: 6 minutes
 Selin: 10 minutes
-Your goal is to find the quickest way to cross the bridge.
-
-Though this battle is not about strength, nor is it about speed. It is a real strategic test for humans and aliens.
-
-Your goal is to invade as many planets as you can and have superiority in the UIX-174 system."
+Your goal is to find the quickest way to cross the bridge."
 align = 1
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/VBoxContainer"]
+margin_top = 438.0
+margin_right = 1024.0
+margin_bottom = 518.0
+rect_min_size = Vector2( 0, 60 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }

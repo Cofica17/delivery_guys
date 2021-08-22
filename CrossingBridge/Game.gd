@@ -63,9 +63,13 @@ func _ready():
 
 func _setup_pos() -> void:
 	asli.rect_position = asli_bp.position
+	asli.sp = asli_bp.position
 	ali.rect_position = ali_bp.position
+	ali.sp = ali_bp.position
 	necdet.rect_position = necdet_bp.position
+	necdet.sp = necdet_bp.position
 	selin.rect_position = selin_bp.position
+	selin.sp = selin_bp.position
 	lamp.rect_position = lamp_bp.position
 
 
@@ -78,7 +82,7 @@ func _on_tryAgain_btn_pressed() -> void:
 
 
 func _move_char(player, bp, ep) -> void:
-	if player.rect_position == bp.position:
+	if player.sp == bp.position:
 		player.rect_position = ep.position
 	else:
 		player.rect_position = bp.position
@@ -149,7 +153,10 @@ func _on_Selin_gui_input(event):
 
 
 func _on_GoBtn_pressed():
-	if not selected.size() == 2 and not lamp_on_other_side():
+	if selected.size() == 0:
+		return
+	
+	if not selected.size() <= 2 and not lamp_on_other_side():
 		return
 	
 	if lamp_on_other_side() and not selected.size() == 1:

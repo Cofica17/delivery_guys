@@ -11,7 +11,7 @@
 [ext_resource path="res://CrossingBridge/Char.gd" type="Script" id=9]
 [ext_resource path="res://assets/Poppins-Medium.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://CrossingBridge/Assets/Usain Bolt.jpg" type="Texture" id=11]
-[ext_resource path="res://CrossingBridge/Assets/Cover image.jpg" type="Texture" id=12]
+[ext_resource path="res://CrossingBridge/Assets/reinfor3.jpg" type="Texture" id=12]
 [ext_resource path="res://CrossingBridge/Assets/Dustin.jpg" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
@@ -47,19 +47,20 @@ __meta__ = {
 }
 
 [node name="Asli" type="Control" parent="MarginContainer/ColorRect"]
-margin_left = 13.0
-margin_top = 393.0
-margin_right = 53.0
-margin_bottom = 433.0
+margin_left = 10.0
+margin_top = 380.0
+margin_right = 70.0
+margin_bottom = 440.0
 script = ExtResource( 9 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Asli"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -77,17 +78,17 @@ valign = 1
 [node name="Ali" type="Control" parent="MarginContainer/ColorRect"]
 margin_left = 35.0
 margin_top = 458.0
-margin_right = 75.0
-margin_bottom = 498.0
+margin_right = 95.0
+margin_bottom = 518.0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Ali"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 5 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -108,16 +109,16 @@ __meta__ = {
 [node name="Necdet" type="Control" parent="MarginContainer/ColorRect"]
 margin_left = 66.0
 margin_top = 524.0
-margin_right = 106.0
-margin_bottom = 564.0
+margin_right = 126.0
+margin_bottom = 584.0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Necdet"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
@@ -139,16 +140,16 @@ __meta__ = {
 [node name="Selin" type="Control" parent="MarginContainer/ColorRect"]
 margin_left = 159.0
 margin_top = 541.0
-margin_right = 199.0
-margin_bottom = 581.0
+margin_right = 219.0
+margin_bottom = 601.0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/Selin"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
@@ -249,9 +250,9 @@ __meta__ = {
 [node name="Bridge" type="TextureRect" parent="MarginContainer/EndGame"]
 visible = false
 margin_left = 22.0
-margin_top = 101.0
-margin_right = 1007.0
-margin_bottom = 569.0
+margin_top = 134.0
+margin_right = 989.0
+margin_bottom = 538.0
 texture = ExtResource( 12 )
 expand = true
 stretch_mode = 6
@@ -346,31 +347,31 @@ __meta__ = {
 }
 
 [node name="AsliBeginPos" type="Position2D" parent="."]
-position = Vector2( 13, 393 )
+position = Vector2( 75.9208, 225.389 )
 
 [node name="AsliEndPos" type="Position2D" parent="."]
-position = Vector2( 785.062, 16.9514 )
+position = Vector2( 835.522, 30.3298 )
 
 [node name="AliBeginPos" type="Position2D" parent="."]
-position = Vector2( 35, 458 )
+position = Vector2( 175.503, 185.165 )
 
 [node name="AliEndPos" type="Position2D" parent="."]
-position = Vector2( 850.749, 18.0108 )
+position = Vector2( 935.668, 36.4705 )
 
 [node name="NectdetBeginPos" type="Position2D" parent="."]
-position = Vector2( 66, 524 )
+position = Vector2( 270.184, 503.714 )
 
 [node name="NectdetEndPos" type="Position2D" parent="."]
-position = Vector2( 924.912, 34.9624 )
+position = Vector2( 923.198, 310.753 )
 
 [node name="SelinBeginPos" type="Position2D" parent="."]
-position = Vector2( 159, 541 )
+position = Vector2( 368.201, 469.084 )
 
 [node name="SelinEndPos" type="Position2D" parent="."]
-position = Vector2( 947.16, 110.184 )
+position = Vector2( 891.755, 230.401 )
 
 [node name="LampBeginPos" type="Position2D" parent="."]
-position = Vector2( 100.937, 435.723 )
+position = Vector2( 103.769, 421.565 )
 
 [node name="LampEndPos" type="Position2D" parent="."]
 position = Vector2( 811.836, 85 )

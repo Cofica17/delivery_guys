@@ -9,7 +9,7 @@ Akşam karanlığı çöktüğünde havanın bir anda bozmasıyla dört arkadaş
 Zifiri karanlıkta arkadaşların köprüyü lambasız geçmesi mümkün değildi. Bu, köprünün durumu yüzünden ikişerli olarak karşıya geçebilecek olan dörtlünün işini zorlaştıracaktı. Ayrıca dört arkadaşın her biri farklı hızlarda köprüyü geçebiliyordu:
 Aslı: 1 dakika
 Ali: 2 dakika
-,Necdet: 6 dakika
+Necdet: 6 dakika
 Selin: 10 dakika
 Dört arkadaş bu köprüyü en az kaç dakikada geçebilir?""",
 	"Rules":"Kurallar",

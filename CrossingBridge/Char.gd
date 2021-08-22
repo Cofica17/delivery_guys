@@ -5,19 +5,13 @@ var tw:Tween
 
 var sp
 
-func _enter_tree():
+
+func start_tween():
 	var tween = Tween.new()
 	tween.name = "Tween"
 	add_child(tween)    
 	tw = tween
 	tween.connect("tween_completed", self, "on_tween_completed")
-
-
-func _ready():
-	sp = rect_position
-
-
-func start_tween():
 	$Tween.interpolate_property(self, "rect_position", rect_position, rect_position + Vector2(0, current_y), 0.25)
 	$Tween.start()
 
@@ -32,5 +26,5 @@ func selected() -> void:
 
 
 func unselected() -> void:
-	tw.stop(self)
+	remove_child($Tween)
 	rect_position = sp
